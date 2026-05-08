@@ -6,6 +6,26 @@
     <title>Jesús Solano | Portafolio Profesional</title>
 
     <style>
+        .banner{
+    background-image:url('portada.jpg');
+    background-size:cover;
+    background-position:center;
+    height:300px;
+    width:100%;
+    border-radius:20px;
+    margin-bottom:-80px;
+}
+
+.perfil{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    background:white;
+    position:relative;
+    z-index:2;
+}
         body{
             font-family: Arial, sans-serif;
             background:#f4f4f4;
@@ -20,6 +40,9 @@
             padding:30px;
             border-radius:15px;
             box-shadow:0 0 15px rgba(0,0,0,0.2);
+            margin-top:0px;
+            position:relative;
+            z-index:2;
         }
 
         img{
@@ -55,9 +78,11 @@
 
 <body>
 
+<div class="banner"></div>
+
 <div class="card">
 
-    <img class="protada" src="protada.jpg">
+    <img class="protada" src="protada.jpg" alt="Foto">
 
     <h1>Jesús Josimar Solano Basilio</h1>
 
