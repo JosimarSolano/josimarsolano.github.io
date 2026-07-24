@@ -1,155 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesús Solano | Portafolio Profesional Geoteco</title>
+    <!-- Librería de iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<title>Jesús Solano | Portafolio Profesional</title>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0b111a; /* Fondo ultra oscuro */
+            text-align: center;
+            color: #e2e8f0;
+        }
 
-<style>
+        /* BANNER */
+        .banner {
+            width: 100%;
+            height: 400px;
+            /* Asegúrate de subir tu nueva imagen con este nombre exacto a Github */
+            background-image: url('Portada_Geoteco.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(22,33,48,0.1) 0%, rgba(11,17,26,1) 100%);
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        /* TARJETA PRINCIPAL */
+        .card {
+            background: #162130; /* Azul marino del logo */
+            max-width: 800px;
+            margin: -100px auto 50px auto;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 10;
+            border-top: 3px solid #A88D56; /* Linea dorada superior */
+        }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#f4f4f4;
-    text-align:center;
-}
+        /* FOTO DE PERFIL */
+        .perfil {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #A88D56; /* Borde dorado */
+            background: #162130;
+            margin-top: -120px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
 
-/* BANNER */
+        /* TEXTOS */
+        h1 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
 
-.banner{
-    width:100%;
-    height:500px;
-    background-image:url('Portada GithubLarissa.png');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
+        .job-title {
+            color: #A88D56; /* Dorado Geoteco */
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-/* TARJETA */
+        .job-title span {
+            color: #94a3b8;
+            font-size: 15px;
+            font-weight: 400;
+        }
 
-.card{
-    background:white;
-    max-width:700px;
-    margin:-60px auto 40px auto;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.15);
-    position:relative;
-}
+        p.description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 15px;
+            padding: 0 20px;
+        }
 
-/* FOTO */
+        /* ETIQUETAS DE HABILIDADES */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
 
-.perfil{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid white;
-    background:white;
-    margin-top:-120px;
-    margin-bottom:20px;
-}
+        .skill-tag {
+            background: rgba(168, 141, 86, 0.1);
+            color: #A88D56;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px solid rgba(168, 141, 86, 0.3);
+        }
 
-/* TEXTOS */
+        /* GRID DE BOTONES NOVEDOSOS */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
 
-h1{
-    color:#1f2937;
-    margin-bottom:10px;
-}
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #1e2d42;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
 
-p{
-    color:#555;
-    line-height:1.6;
-    margin-bottom:20px;
-}
+        .btn i {
+            font-size: 20px;
+            color: #A88D56;
+            transition: all 0.3s ease;
+        }
 
-/* BOTONES */
+        .btn:hover {
+            background: #A88D56;
+            color: #162130;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(168, 141, 86, 0.2);
+        }
 
-.btn{
-    display:block;
-    background:#0b57d0;
-    color:white;
-    text-decoration:none;
-    padding:15px;
-    margin:12px 0;
-    border-radius:10px;
-    font-weight:bold;
-    transition:0.3s;
-}
+        .btn:hover i {
+            color: #162130;
+        }
 
-.btn:hover{
-    background:#084298;
-}
-
-/* RESPONSIVE */
-
-@media (max-width:768px){
-
-    .banner{
-        height:250px;
-    }
-
-    .perfil{
-        width:140px;
-        height:140px;
-        margin-top:-90px;
-    }
-
-    .card{
-        width:90%;
-    }
-}
-
-</style>
+        /* RESPONSIVE PARA MOVILES */
+        @media (max-width: 768px) {
+            .banner { height: 280px; }
+            .card { width: 92%; padding: 30px 20px; margin-top: -80px; }
+            .perfil { width: 130px; height: 130px; margin-top: -95px; }
+            p.description { padding: 0; }
+            .links-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="banner"></div>
+    <div class="banner"></div>
 
-<div class="card">
+    <div class="card">
+        <!-- Asegúrate de mantener tu foto en Github o actualizarla con este nombre -->
+        <img class="perfil" src="Josimar_Solano.png" alt="Jesús Solano">
 
-    <img class="perfil" src="Josimar_Solano.png" alt="Jesús Solano">
+        <h1>Jesús Josimar Solano Basilio</h1>
+        <div class="job-title">
+            Coordinador HSE Offshore CME<br>
+            <span>Geoteco International S.A. de C.V.</span>
+        </div>
 
-    <h1>Jesús Josimar Solano Basilio</h1>
+        <p class="description">
+            Ingeniero en Mecatrónica y Maestrante en Ingeniería de Procesos. <br>
+            Más de 8 años de experiencia especializado en Seguridad Industrial, Operaciones Costa Afuera y Análisis de Riesgo a Procesos.
+        </p>
 
-    <p>
+        <div class="skills-container">
+            <span class="skill-tag">ARP</span>
+            <span class="skill-tag">LOPA</span>
+            <span class="skill-tag">HAZOP</span>
+            <span class="skill-tag">WHAT-IF</span>
+            <span class="skill-tag">SIS</span>
+            <span class="skill-tag">PRE</span>
+        </div>
 
-    Ingeniero en Mecatrónica<br>
+        <div class="links-grid">
+            <a class="btn" href="https://drive.google.com/uc?export=download&id=1YJb0xlkbq_j9Loc9f0E1hxGATvm858nv">
+                <i class="fas fa-file-pdf"></i> Descargar CV
+            </a>
 
-    Especialista certificado en estudios de Seguridad Industrial a Procesos<br><br>
+            <a class="btn" href="https://drive.google.com/uc?export=download&id=1oN081GzNSxFGCUbirQG_0cUPv_8_zbyX">
+                <i class="fas fa-book"></i> Catálogo de Servicios
+            </a>
 
-    ARP • PRE • PCPPD • SIS • LOPA • HAZOP • WHAT-IF • Análisis de Consecuencias • Seguridad Funcional • Instrumentación Industrial
+            <a class="btn" href="https://wa.me/5219381130040" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
 
-   </p>
+            <a class="btn" href="https://www.linkedin.com/in/jes%C3%BAs-josimar-solano-basilio-b5a329199/" target="_blank">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
 
-    <a class="btn" href="https://drive.google.com/uc?export=download&id=1YJb0xlkbq_j9Loc9f0E1hxGATvm858nv">
-        📄 Descargar CV
-    </a>
-
-    <a class="btn" href="https://drive.google.com/uc?export=download&id=1oN081GzNSxFGCUbirQG_0cUPv_8_zbyX">
-        📘 Descargar Catálogo de Servicios
-    </a>
-
-    <a class="btn" href="https://wa.me/5219381130040" target="_blank">
-        📱 Contacto WhatsApp
-    </a>
-
-    <a class="btn" href="https://www.linkedin.com/in/jes%C3%BAs-josimar-solano-basilio-b5a329199/" target="_blank">
-        💼 LinkedIn
-    </a>
-
-    <a class="btn" href="https://larissamx.com/" target="_blank">
-        🌐 Página de Larissa
-    </a>
-
-</div>
+            <!-- Sustituimos el botón de Larissa por el de Geoteco. Si tienen otra URL, cambiala aquí -->
+            <a class="btn" href="https://www.geoteco.com/" target="_blank">
+                <i class="fas fa-globe"></i> Portal Geoteco
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
